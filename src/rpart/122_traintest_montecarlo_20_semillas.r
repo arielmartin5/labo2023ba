@@ -7,7 +7,9 @@ require("parallel")
 
 PARAM <- list()
 # reemplazar por las propias semillas
-PARAM$semillas <- c(101666, 166666, 196666, 199999, 666666)
+PARAM$semillas <- c(101666, 166666, 196666, 199999, 666666, 1000117, 577777,
+                    119974, 101069, 741157, 192887, 106666, 100057, 526669, 
+                    701307, 166533, 101799, 125013, 1307176, 1706613)
 
 #------------------------------------------------------------------------------
 # particionar agrega una columna llamada fold a un dataset que consiste
@@ -90,9 +92,9 @@ dataset <- dataset[clase_ternaria != ""]
 
 param_basicos <- list(
   "cp" = -1, # complejidad minima
-  "minsplit" = 900, # minima cant de registros en un nodo para hacer el split
-  "minbucket" = 440, # minima cantidad de registros en una hoja
-  "maxdepth" = 5
+  "minsplit" = 400, # minima cant de registros en un nodo para hacer el split
+  "minbucket" = 100, # minima cantidad de registros en una hoja
+  "maxdepth" = 7
 ) # profundidad máxima del arbol
 
 # Un solo llamado, con la semilla 17
@@ -105,7 +107,7 @@ salidas <- mcmapply(ArbolEstimarGanancia,
   PARAM$semillas, # paso el vector de semillas
   MoreArgs = list(param_basicos), # aqui paso el segundo parametro
   SIMPLIFY = FALSE,
-  mc.cores = 1
+  mc.cores = 4
 ) # se puede subir a 5 si posee Linux o Mac OS
 
 # muestro la lista de las salidas en testing
@@ -118,7 +120,7 @@ tb_salida <- rbindlist(salidas)
 print(tb_salida)
 
 # finalmente calculo la media (promedio)  de las ganancias
-tb_salida[, mean(ganancia_test)]
+print(tb_salida[, mean(ganancia_test)])
 
 # calculo todos los promedios
 print(tb_salida[, lapply(.SD, mean)])
