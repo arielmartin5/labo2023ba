@@ -11,17 +11,17 @@ require("rpart")
 
 # parmatros experimento
 PARAM <- list()
-PARAM$experimento <- 3223
+PARAM$experimento <- 3222
 
 # Establezco la semilla aleatoria, cambiar por SU primer semilla
 PARAM$semilla <- 124541
 
 # parameetros rpart
 PARAM$rpart_param <- list(
-  "cp" = -1,
-  "minsplit" = 250,
-  "minbucket" = 100,
-  "maxdepth" = 14
+  "cp" = -0.879985305429813,
+  "minsplit" = 2285,
+  "minbucket" = 1140,
+  "maxdepth" = 10
 )
 
 # parametros  arbol
@@ -29,7 +29,7 @@ PARAM$rpart_param <- list(
 PARAM$feature_fraction <- 0.5
 # voy a generar 500 arboles, a mas arboles mas tiempo de proceso y MEJOR MODELO
 #  pero ganancias marginales
-PARAM$num_trees_max <- 550
+PARAM$num_trees_max <- 500
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ setwd(carpeta_experimento)
 
 # que tamanos de ensemble grabo a disco, pero siempre debo generar los 500
 # grabar <- c(1, 5, 10, 50, 100, 200, 500)
-grabar <- c(550)
+grabar <- c(500)
 
 
 # defino los dataset de entrenamiento y aplicacion
