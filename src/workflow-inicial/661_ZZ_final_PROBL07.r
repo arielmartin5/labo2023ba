@@ -43,18 +43,15 @@ PARAM$exp_input <- "HT6510_PROBL07"
 PARAM$modelos_rank <- c(1)
 
 # reemplazar por las propias semillas
-PARAM$semillas <- c(999999, 999998, 999997, 999996, 999995,
-                    999994, 999993, 999992, 999991, 999990,
-                    999989, 999988, 999987, 999986, 999985,
-                    999984, 999983, 999982, 999981, 999980                    
-                    )
+PARAM$semillas <- c(125541, 101666, 100057, 100207, 106791, 110689, 
+                    111422, 123457, 136713, 143821)
 
 PARAM$kaggle$envios_desde <- 9500L
 PARAM$kaggle$envios_hasta <- 12000L
 PARAM$kaggle$envios_salto <- 500L
 
 # para el caso que deba graficar
-PARAM$graficar$envios_desde <- 9500L
+PARAM$graficar$envios_desde <- 8000L
 PARAM$graficar$envios_hasta <- 20000L
 PARAM$graficar$ventana_suavizado <- 2001L
 
