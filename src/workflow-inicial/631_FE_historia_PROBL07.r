@@ -30,8 +30,8 @@ PARAM$Tendencias1$ventana <- 9
 PARAM$Tendencias1$tendencia <- TRUE
 PARAM$Tendencias1$minimo <- FALSE
 PARAM$Tendencias1$maximo <- FALSE
-PARAM$Tendencias1$promedio <- TRUE
-PARAM$Tendencias1$ratioavg <- FALSE
+PARAM$Tendencias1$promedio <- FALSE
+PARAM$Tendencias1$ratioavg <- TRUE
 PARAM$Tendencias1$ratiomax <- FALSE
 
 PARAM$Tendencias2$run <- FALSE
@@ -253,7 +253,7 @@ AgregaVarRandomForest <- function(
 
   campos_buenos <- setdiff(
     colnames(dataset_rf),
-    c("clase_ternaria", "entrenamiento")
+    c("clase_ternaria", "entrenamiento", "numero_de_cliente")
   )
 
   set.seed(semilla, kind = "L'Ecuyer-CMRG")
@@ -353,7 +353,7 @@ CanaritosAsesinos <- function(
 
   campos_buenos <- setdiff(
     colnames(dataset),
-    c("clase_ternaria", "clase01", "foto_mes")
+    c("clase_ternaria", "clase01", "foto_mes", "numero_de_cliente")
   )
 
   set.seed(canaritos_semilla, kind = "L'Ecuyer-CMRG")
