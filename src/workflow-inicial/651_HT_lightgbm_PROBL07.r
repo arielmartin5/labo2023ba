@@ -500,7 +500,7 @@ dataset[, clase01 := ifelse(clase_ternaria == "CONTINUA", 0L, 1L)]
 campos_buenos <- setdiff(
   copy(colnames(dataset)),
   c("clase01", "clase_ternaria", "fold_train", "fold_validate", "fold_test", 
-    "numero_de_clientes", "foto_mes")
+    "numero_de_cliente", "foto_mes")
 )
 
 # la particion de train siempre va
