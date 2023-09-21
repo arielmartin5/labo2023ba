@@ -43,10 +43,10 @@ PARAM$exp_input <- "HT6510_PROBL07"
 PARAM$modelos_rank <- c(1)
 
 # reemplazar por las propias semillas
-PARAM$semillas <- c(125541, 101666, 100057, 100207, 106791, 110689, 
-                    111422, 123457, 136713, 143821)
+PARAM$semillas <- c(125541) #, 101666, 100057, 100207, 106791, 110689, 
+                    #111422, 123457, 136713, 143821)
 
-PARAM$kaggle$envios_desde <- 9500L
+PARAM$kaggle$envios_desde <- 8500L
 PARAM$kaggle$envios_hasta <- 12000L
 PARAM$kaggle$envios_salto <- 500L
 
@@ -115,7 +115,8 @@ future_con_clase <- dfuture[clase_ternaria == "" | is.na(clase_ternaria), .N] ==
 # defino la clase binaria
 dataset[, clase01 := ifelse(clase_ternaria %in% c("BAJA+1", "BAJA+2"), 1, 0)]
 
-campos_buenos <- setdiff(colnames(dataset), c("clase_ternaria", "clase01"))
+campos_buenos <- setdiff(colnames(dataset), c("clase_ternaria", "clase01", 
+                          "numero_de_cliente", "foto_mes"))
 
 
 # genero un modelo para cada uno de las modelos_qty MEJORES
