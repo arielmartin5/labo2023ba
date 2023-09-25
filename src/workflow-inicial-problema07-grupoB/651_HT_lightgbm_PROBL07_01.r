@@ -1,6 +1,6 @@
 # Experimentos Colaborativos Default
 # Hyperparameter Tuning  lightgbm
-# Optimización Bayesiana para Problema 7 - Grupo B - Experimento 00
+# Optimización Bayesiana para Problema 7 - Grupo B - Experimento 01
 
 # pensado para datasets con UNDERSAPLING de la clase mayoritaria
 
@@ -28,9 +28,9 @@ options(error = function() {
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "HT6510_PROBL07_00"
+PARAM$experimento <- "HT6510_PROBL07_01"
 
-PARAM$exp_input <- "TS6410_PROBL07_00"
+PARAM$exp_input <- "TS6410_PROBL07_01"
 
 # En caso que se haga cross validation, se usa esta cantidad de folds
 PARAM$lgb_crossvalidation_folds <- 20
