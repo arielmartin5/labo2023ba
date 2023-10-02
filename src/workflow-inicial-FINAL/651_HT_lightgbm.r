@@ -27,9 +27,9 @@ options(error = function() {
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "HT6510"
+PARAM$experimento <- "HT6510_FINAL"
 
-PARAM$exp_input <- "TS6410"
+PARAM$exp_input <- "TS6410_FINAL"
 
 # En caso que se haga cross validation, se usa esta cantidad de folds
 PARAM$lgb_crossvalidation_folds <- 20
@@ -57,8 +57,8 @@ PARAM$lgb_basicos <- list(
 
   bagging_fraction = 1.0, # 0.0 < bagging_fraction <= 1.0
   pos_bagging_fraction = 1.0, # 0.0 < pos_bagging_fraction <= 1.0
-  neg_bagging_fraction = 0.1, # 0.0 < neg_bagging_fraction <= 1.0
-  is_unbalance = TRUE, #
+  neg_bagging_fraction = 1.0, # 0.0 < neg_bagging_fraction <= 1.0
+  is_unbalance = FALSE, #
   scale_pos_weight = 1.0, # scale_pos_weight > 0.0
 
   drop_rate = 0.1, # 0.0 < neg_bagging_fraction <= 1.0
@@ -77,11 +77,7 @@ PARAM$bo_lgb <- makeParamSet(
   makeNumericParam("learning_rate", lower = 0.02, upper = 0.3),
   makeNumericParam("feature_fraction", lower = 0.01, upper = 1.0),
   makeIntegerParam("num_leaves", lower = 8L, upper = 1024L),
-  makeIntegerParam("min_data_in_leaf", lower = 100L, upper = 50000L),
-  makeNumericParam("bagging_fraction", lower = 0.01, uppper = 1.0),
-  makeNumericParam("neg_bagging_fraction", lower = 0.01, upper = 1.0),
-  makeNumericParam("lambda_l1", lower = 0.0, upper = 10.0),
-  makeNumericParam("lambda_l2", lower = 0.0, upper = 10.0)
+  makeIntegerParam("min_data_in_leaf", lower = 100L, upper = 50000L)
 )
 
 
