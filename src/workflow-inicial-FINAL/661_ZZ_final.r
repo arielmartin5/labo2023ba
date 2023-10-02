@@ -48,7 +48,7 @@ PARAM$semillas <- c(125541)
 #                    703127, 106791, 111422, 711195, 200003, 986177, 100057,
 #                    143821, 700561, 666777, 776667, 136713, 176613)
 
-PARAM$kaggle$envios_desde <- 9500L
+PARAM$kaggle$envios_desde <- 7000L
 PARAM$kaggle$envios_hasta <- 14000L
 PARAM$kaggle$envios_salto <- 500L
 
