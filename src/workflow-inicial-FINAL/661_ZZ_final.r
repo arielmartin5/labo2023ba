@@ -43,13 +43,12 @@ PARAM$exp_input <- "HT6510_FINAL"
 PARAM$modelos_rank <- c(1)
 
 # reemplazar por las propias semillas
-PARAM$semillas <- c(125541)
-#, 101666, 100207, 400009, 123457, 110689, 500153,
-#                    703127, 106791, 111422, 711195, 200003, 986177, 100057,
-#                    143821, 700561, 666777, 776667, 136713, 176613)
+PARAM$semillas <- c(125541, 101666, 100207, 400009, 123457, 110689, 500153,
+                    703127, 106791, 111422, 711195, 200003, 986177, 100057,
+                    143821, 700561, 666777, 776667, 136713, 176613)
 
-PARAM$kaggle$envios_desde <- 7000L
-PARAM$kaggle$envios_hasta <- 14000L
+PARAM$kaggle$envios_desde <- 9500L
+PARAM$kaggle$envios_hasta <- 10000L
 PARAM$kaggle$envios_salto <- 500L
 
 # para el caso que deba graficar
